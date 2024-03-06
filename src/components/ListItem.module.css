@@ -1,0 +1,7 @@
+.listItem {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 0.1rem solid rgb(235, 235, 235);
+    box-sizing: border-box;
+}
