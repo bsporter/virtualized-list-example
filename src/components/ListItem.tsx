@@ -1,6 +1,7 @@
-import { ReactNode } from 'react';
+import { ReactNode, memo } from 'react';
 import styles from './ListItem.module.css';
 import { ListItem as ListItemData } from '../data';
+import { areEqual } from 'react-window';
 
 interface Props {
     style: React.CSSProperties;
@@ -10,7 +11,7 @@ interface Props {
     };
 }
 
-export const ListItem = ({ style, index, data }: Props) => {
+export const ListItem = memo(({ style, index, data }: Props) => {
     const item = data.items[index];
 
     let content: ReactNode;
@@ -28,4 +29,4 @@ export const ListItem = ({ style, index, data }: Props) => {
             {content}
         </div>
     );
-};
+}, areEqual);
